@@ -26,30 +26,93 @@ ALGORITHM:
 
 PROGRAM:
 
-      <?xml version="1.0" encoding="utf-8"?>
-      <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+activity_main.xml:
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <TextView
-          android:id="@+id/textView"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="HELLO WORLD!"
-          android:textSize="40sp"
-          android:textStyle="bold"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent" />
-      </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HELLO WORLD!"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+MainActivity.java:
+
+    package com.example.helloworld;
+
+    import androidx.appcompat.app.AppCompatActivity;
+    
+    import android.os.Bundle;
+    import android.util.Log;
+    import android.widget.Toast;
+    
+    public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Display toast message when the activity is created
+        Toast.makeText(getApplicationContext(), "HELLO!!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.d("lifecycle","onStart Invoked");
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.d("lifecycle","onPause Invoked");
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.d("lifecycle","onResume Invoked");
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.d("lifecycle","onStop Invoked");
+    }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        Log.d("lifecycle","onRestart Invoked");
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.d("lifecycle","onDestroy Invoked");
+    }
+}
+
 
 OUTPUT
+![hello world](https://github.com/Catty12384/Mobile-Application-Development/assets/120629225/be053776-5a7c-4a9e-bee2-18d8425a3662)
 
-  ![hello world](https://github.com/Catty12384/Mobile-Application-Development/assets/120629225/20e7abe7-b0b5-43ae-b5a3-6e2f2ddf5f64)
+
+  
 
 
 
