@@ -54,11 +54,11 @@ MainActivity.java:
     package com.example.helloworld;
 
     import androidx.appcompat.app.AppCompatActivity;
-    
+
     import android.os.Bundle;
     import android.util.Log;
     import android.widget.Toast;
-    
+
     public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -67,43 +67,43 @@ MainActivity.java:
         setContentView(R.layout.activity_main);
 
         // Display toast message when the activity is created
-        Toast.makeText(getApplicationContext(), "HELLO!!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "onCreate Invoked", Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onStart(){
         super.onStart();
-        Log.d("lifecycle","onStart Invoked");
+        Toast.makeText(getApplicationContext(), "onStart Invoked", Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onPause(){
         super.onPause();
-        Log.d("lifecycle","onPause Invoked");
+        Toast.makeText(getApplicationContext(), "onPause Invoked", Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onResume(){
         super.onResume();
-        Log.d("lifecycle","onResume Invoked");
+        Toast.makeText(getApplicationContext(), "onResume Invoked", Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onStop(){
         super.onStop();
-        Log.d("lifecycle","onStop Invoked");
+        Toast.makeText(getApplicationContext(), "onStop Invoked", Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onRestart(){
         super.onRestart();
-        Log.d("lifecycle","onRestart Invoked");
+        Toast.makeText(getApplicationContext(), "onRestart Invoked", Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onDestroy(){
         super.onDestroy();
-        Log.d("lifecycle","onDestroy Invoked");
+        Toast.makeText(getApplicationContext(), "onDestroy Invoked", Toast.LENGTH_LONG).show();
     }
 }
 
